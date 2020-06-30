@@ -54,6 +54,7 @@ selectedFile:File;
     if(responseData.product!=null)
     alert("Successfully Added Product");
     });
+    form.reset();
     
   }
 
