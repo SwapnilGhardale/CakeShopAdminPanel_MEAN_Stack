@@ -3,30 +3,26 @@
     <div class="table">
       
       <div class="row header green">
-        <div class="cell">
-          Product Img
-        </div>
-        <div class="cell">
-          Name
-        </div>
-        <div class="cell">
-            Price
-        </div>
-        <div class="cell">
-          Category
-        </div>
-        <div class="cell">
-          Type
-        </div>
-        <div class="cell">
-            Stock
-          </div>
+        <div class="cell">Sr. No</div>
+        <div class="cell">Product Img</div>
+        <div class="cell">Name</div>
+        <div class="cell">Price(Rs.)</div>
+        <div class="cell">Category</div>
+        <div class="cell">Type</div>
+        <div class="cell">Stock</div>
       </div>
       
-      <div class="row">
+      <div class="row" *ngFor="let i of products, let m=index">
+        <div class="cell">{{m+1}}</div>
+        <div class="cell"><img style="width: 72px; height: 72px;" class="media-object" src="http://localhost:3000/{{i.productImagePath}}"></div>
+        <div class="cell">{{i.name}}</div>
+        <div class="cell">{{i.price}}</div>
+        <div class="cell">{{i.category.name}}</div>
         <div class="cell">
-            
-          </div>
+          <span *ngIf="i.veg"><img src="assets/veg.svg" style="height: 30px;" alt="Veg"></span>
+          <span *ngIf="!i.veg"><img src="assets/non-veg.svg" style="height: 30px;" alt="Non-Veg"></span>
+        </div>
+        <div class="cell">{{i.stock}}</div>
       </div>
       
      

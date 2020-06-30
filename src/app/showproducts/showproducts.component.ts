@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import{Product}from '../product.model';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-showproducts',
   templateUrl: './showproducts.component.html',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowproductsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:HttpClient) { }
+products:Product[];
   ngOnInit(): void {
+
+    this.http.get<{[key:string]:Product}>("http://localhost:3000/api/product")
+    .pipe(map(
+      responseData => 
+      {
+        const postArray =[];
+        for (const key in responseData)
+        {
+            if(responseData.hasOwnProperty(key))
+            {
+                postArray.push({...responseData[key],id:key})
+            }
+        }
+
+        //console.log(postArray);
+        return postArray;
+
+           
+    })).subscribe(posts =>{
+     //   console.log("array"+posts);
+  
+       this.products = posts;
+     })
   }
 
 }
