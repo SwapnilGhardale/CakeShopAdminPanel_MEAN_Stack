@@ -12,7 +12,7 @@ import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShowproductsComponent } from './showproducts/showproducts.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

@@ -3,29 +3,18 @@
     <div class="table">
       
       <div class="row header red">
-        <div class="cell">
-          Name
-        </div>
-        <div class="cell">
-          username
-        </div>
-        <div class="cell">
-            Password
-        </div>
-        
-        
+        <div class="cell">Sr. No</div>
+        <div class="cell">Name</div>
+        <div class="cell">Email</div>
+        <div class="cell">Address</div>
+      
       </div>
       
-      <div class="row">
-        <div class="cell">
-            Rohit
-          </div>
-          <div class="cell">
-            rohit123
-          </div>
-          <div class="cell">
-            pass123
-          </div>
+      <div class="row" *ngFor="let i of users,let m=index">
+        <div class="cell">{{m+1}}</div>
+        <div class="cell">{{i.name}}</div> 
+        <div class="cell">{{i.email}}</div> 
+        <div class="cell">{{i.address}}</div>
       </div>
       
      
