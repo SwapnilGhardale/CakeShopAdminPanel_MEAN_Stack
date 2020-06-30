@@ -10,6 +10,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './products/products.component';
 import { CategoryComponent } from './category/category.component';
 import { FooterComponent } from './footer/footer.component';
+import { ShowproductsComponent } from './showproducts/showproducts.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { FooterComponent } from './footer/footer.component';
     OrdersComponent,
     ProductsComponent,
     CategoryComponent,
-    FooterComponent
+    FooterComponent,
+    ShowproductsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
