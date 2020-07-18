@@ -13,7 +13,7 @@ export class ShowproductsComponent implements OnInit {
 products:Product[];
   ngOnInit(): void {
 
-    this.http.get<{[key:string]:Product}>("http://localhost:3000/api/product")
+    this.http.get<{[key:string]:Product}>(localStorage.getItem('url')+'/api/product')
     .pipe(map(
       responseData => 
       {

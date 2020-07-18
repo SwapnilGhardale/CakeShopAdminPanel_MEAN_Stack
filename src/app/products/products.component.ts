@@ -17,7 +17,7 @@ category:Category[];
 selectedFile:File;
   ngOnInit(): void {
 
-    this.http.get<{[key:string]:Category}>("http://localhost:3000/api/categories")
+    this.http.get<{[key:string]:Category}>(localStorage.getItem('url')+'/api/categories')
     .pipe(map(responseData => {
         const postArray =[];
         for (const key in responseData)

@@ -13,7 +13,7 @@ export class OrdersComponent implements OnInit {
 orders:Order[];
   ngOnInit(): void {
     
-    this.http.get<{[key:string]:Order}>("http://localhost:3000/api/orders")
+    this.http.get<{[key:string]:Order}>(localStorage.getItem('url')+'/api/orders')
     .pipe(map(
       responseData => 
       {

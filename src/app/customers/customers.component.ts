@@ -15,7 +15,7 @@ export class CustomersComponent implements OnInit {
 users:User[];
   ngOnInit(): void {
 
-    this.http.get<{[key:string]:User}>("http://localhost:3000/api/users")
+    this.http.get<{[key:string]:User}>(localStorage.getItem('url')+'/api/users')
     .pipe(map(responseData => {
         const postArray =[];
         for (const key in responseData)

@@ -20,7 +20,7 @@ addCategoryClicked(form:NgForm){
   const categorydata = { name :category};
 
 
-  this.http.post('http://localhost:3000/api/category/create',categorydata).pipe(map(response=>{return response}))
+  this.http.post(localStorage.getItem('url')+'/api/category/create',categorydata).pipe(map(response=>{return response}))
   .subscribe(responseData => {
     //console.log(responseData);
     if(responseData){
